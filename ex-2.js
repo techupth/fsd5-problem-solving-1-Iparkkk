@@ -3,35 +3,20 @@
 const isPalindrome = function (s) {
   let revertS = [];
   console.log(s);
-  s = s.toLowerCase();
-  s = s.replaceAll(",", "");
-  s = s.replaceAll(":", "");
-  s = s.replaceAll(" ", "");
+  s = s
+    .toLowerCase()
+    .replaceAll(",", "")
+    .replaceAll(":", "")
+    .replaceAll(" ", "");
+
   console.log(s);
   for (let i of s) {
     revertS.push(i);
   }
-  revertS.reverse();
-
+  revertS = revertS.reverse().join().replaceAll(",", "");
   console.log(revertS);
-  return checkEqualArray(s, revertS);
+  return s === revertS;
 };
-
-function checkEqualArray(array1, array2) {
-  let countCorrect = 0;
-  if (array1.length === array2.length) {
-    for (let i = 0; i < array1.length; i++) {
-      if (array1[i] === array2[i]) {
-        countCorrect = countCorrect + 1;
-      }
-    }
-    if (countCorrect == array1.length) {
-      return true;
-    } else {
-      return false;
-    }
-  }
-}
 
 const result1 = isPalindrome("A man, a plan, a canal: Panama");
 const result2 = isPalindrome("race a car");
