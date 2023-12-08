@@ -1,7 +1,8 @@
 //Exercise 1: Add Strings
 
 const addStrings = function (num1, num2) {
-  //Start coding here
+  let result = Number(num1) + Number(num2);
+  return String(result);
 };
 
 const result1 = addStrings("11", "123");
